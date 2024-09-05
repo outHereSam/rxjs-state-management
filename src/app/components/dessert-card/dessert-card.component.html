@@ -1,0 +1,80 @@
+<div class="dessert-card">
+  <div class="image">
+    <div
+      [style]="{
+        border:
+          cartBtnClicked && cartService.getItemQuantity(dessertData.name) > 0
+            ? 'solid 2px hsl(14, 86%, 42%)'
+            : 'none'
+      }"
+      class="photo"
+    >
+      <img
+        class="mobile"
+        [src]="dessertData.image.mobile"
+        [alt]="dessertData.name"
+      />
+      <img
+        class="tablet"
+        [src]="dessertData.image.tablet"
+        [alt]="dessertData.name"
+      />
+      <img
+        class="desktop"
+        [src]="dessertData.image.desktop"
+        [alt]="dessertData.name"
+      />
+    </div>
+    <button
+      class="add-to-cart"
+      (click)="addToCart(dessertData.name)"
+      [style]="{
+        display:
+          cartBtnClicked && cartService.getItemQuantity(dessertData.name) > 0
+            ? 'none'
+            : 'flex'
+      }"
+    >
+      <img src="../../../assets/images/icon-add-to-cart.svg" alt="Cart Icon" />
+      Add to Cart
+    </button>
+    <div
+      class="quantity-selector"
+      [style]="{
+        display:
+          cartBtnClicked && cartService.getItemQuantity(dessertData.name) > 0
+            ? 'flex'
+            : 'none'
+      }"
+    >
+      <button
+        class="decrease"
+        (click)="decreaseItemCartQuantity(dessertData.name)"
+      >
+        <img
+          src="../../../assets/images/icon-decrement-quantity.svg"
+          alt="Decrease quantity"
+        />
+      </button>
+      <p class="quantity">
+        {{ cartService.getItemQuantity(dessertData.name) }}
+      </p>
+      <button
+        class="increase"
+        (click)="increaseItemCartQuantity(dessertData.name)"
+      >
+        <img
+          src="../../../assets/images/icon-increment-quantity.svg"
+          alt="Increase quantity"
+        />
+      </button>
+    </div>
+  </div>
+  <div class="description">
+    <p class="category">{{ dessertData.category }}</p>
+    <h3 class="name">{{ dessertData.name }}</h3>
+    <p class="price">
+      {{ dessertData.price | currency : "USD" : "symbol" : "1.2-2" }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div [class]="modalService.isOpened ? 'container' : 'hidden'">
+  <div class="backdrop"></div>
+  <div class="modal">
+    <img
+      src="../../../assets/images/icon-order-confirmed.svg"
+      alt="confirmed check"
+    />
+    <div class="heading">
+      <h1>Order Confirmed</h1>
+      <p>We hope you enjoy your food!</p>
+    </div>
+
+    <div class="cartitems">
+      <div class="confirmed-items">
+        @for (cartItem of cartService.cartItems; track cartItem.name) {
+        <app-cart-item [cartItemId]="cartItem.name" [isCartItem]="false" />
+        }
+      </div>
+      <div class="order-total">
+        <p>Order Total</p>
+        <h2 class="total">
+          {{ getTotalPrice() | currency : "USD" : "symbol" : "1.2-2" }}
+        </h2>
+      </div>
+    </div>
+
+    <button class="new" (click)="startNewOrder()">Start New Order</button>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+@import '../../../styles'
+
+.cart-item
+    padding: 16px 0
+    border-bottom: solid 1px $rose-100
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .total-price
+        font-size: 14px
+        font-weight: 500
+        color: $rose-500
+
+    .remove
+        appearance: none
+        background: none
+        border: solid 1px $rose-400
+        width: 20px
+        height: 20px
+        border-radius: 999px
+        cursor: pointer
+        display: flex
+        justify-content: center
+        align-items: center
+
+        &:hover
+            border-color: $rose-900
+
+        &:hover svg path
+            fill: $rose-900
+
+.name
+    font-size: 14px
+    font-weight: 500
+    color: $rose-900
+    margin: 0 0 8px 0
+    text-overflow: ellipsis
+    max-width: 153px
+    white-space: nowrap
+    overflow: hidden
+
+.quantity
+    font-size: 14px
+    font-weight: 500
+    color: $red
+    margin: 0 8px 0 0
+
+.price
+    font-size: 14px
+    color: $rose-500
+    margin: 0 4px 0 0
+
+.confirmed-item
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 10px
+    padding: 16px 0
+    border-bottom: solid 1px $rose-100
+
+
+    .details
+        display: flex
+        gap: 16px
+
+        .thumbnail
+            width: 48px
+            height: 48px
+
+            img 
+                height: 100%
+                // object-fit: cover
+
+    .total-price
+        font-size: 16px
+        font-weight: 500
+        color: $rose-900
+
+@media only screen and (min-width: 640px)
+    .confirmed-item
+        gap: 252px

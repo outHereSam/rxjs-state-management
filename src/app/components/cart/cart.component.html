@@ -1,0 +1,46 @@
+<app-confirmation-modal />
+<div class="cart-container">
+  <h1 class="title">Your Cart({{ cartService.cartQuantity }})</h1>
+
+  <!-- Conditionally render the cart -->
+  <div class="content-container">
+    @if (cartService.cartQuantity < 1) {
+    <div class="empty-content">
+      <img
+        src="../../../assets/images/illustration-empty-cart.svg"
+        alt="Empty Cart Image"
+      />
+
+      <p>Your added items will appear here</p>
+    </div>
+    } @else {
+
+    <div class="cart-items">
+      @for (cartItem of cartService.cartItems; track cartItem.name) {
+      <app-cart-item [cartItemId]="cartItem.name" [isCartItem]="true" />
+      }
+    </div>
+
+    <div class="order-total">
+      <p>Order Total</p>
+      <h2 class="total">
+        {{ getTotalPrice() | currency : "USD" : "symbol" : "1.2-2" }}
+      </h2>
+    </div>
+
+    <div class="carbon-neutral-info">
+      <p>
+        <img
+          src="../../../assets/images/icon-carbon-neutral.svg"
+          alt="Carbon Neutral"
+        />
+        This is a <b>carbon-neutral</b> delivery
+      </p>
+    </div>
+
+    <button class="confirm" (click)="modalService.openModal()">
+      Confirm Order
+    </button>
+    }
+  </div>
+</div>

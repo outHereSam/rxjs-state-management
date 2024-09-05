@@ -1,0 +1,20 @@
+.main-container 
+    padding: 24px
+    display: flex
+    flex-direction: column
+    max-width: 1216px
+    margin: 0 auto
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+    .main-container
+        padding: 40px
+
+@media only screen and (min-width: 1024px)
+    .main-container
+        flex-direction: row
+        gap: 32px
+        margin-top: 88px
+
+    app-cart
+        flex-grow: 1
+

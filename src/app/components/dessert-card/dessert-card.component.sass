@@ -1,0 +1,91 @@
+@import '../../../styles'
+
+.dessert-card
+    margin: 0 0 24px 0
+
+    .image
+        margin: 0 0 16px 0
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        .photo
+            width: 100%
+            height: 212px
+            border-radius: 8px
+
+            img
+                border-radius: 8px
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+        .add-to-cart
+            font-size: 14px
+            font-weight: 500
+            display: flex
+            align-items: center
+            gap: 8px
+            padding: 12px 28px
+            border: solid 1px $rose-400
+            background-color: $white
+            border-radius: 999px
+            margin: -22px 0 0 0
+            cursor: pointer
+
+            &:hover
+                border: solid 1px $red
+                color: $red
+
+        .quantity-selector
+            // border: solid 1px pink
+            display: flex
+            align-items: center
+            gap: 43px
+            background-color: $red
+            color: $white
+            padding: 12px
+            border-radius: 999px
+            margin: -22px 0 0 0
+
+
+            button
+                background: none
+                border: solid 1px $white
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 5px
+                width: 20px
+                height: 20px
+                border-radius: 999px
+                cursor: pointer
+
+    .description
+        .category
+            font-size: 14px
+            color: $rose-500
+
+        .name
+            font-size: 16px
+            font-weight: 500
+            color: $rose-900
+            margin: 4px 0
+
+        .price
+            font-size: 16px
+            font-weight: 500
+            color: $red
+
+
+@media only screen and (max-width: 767px)
+    .tablet, .desktop
+        display: none
+
+@media only screen and (min-width: 768px) and (max-width: 1023px)
+    .mobile, .desktop
+        display: none
+
+@media only screen and (min-width: 1023px)
+    .mobile, .tablet
+        display: none
