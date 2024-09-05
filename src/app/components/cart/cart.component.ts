@@ -6,11 +6,17 @@ import { DessertsService } from '../../services/desserts.service';
 import { CurrencyPipe } from '@angular/common';
 import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
 import { ModalService } from '../../services/modal.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CartItemComponent, CurrencyPipe, ConfirmationModalComponent],
+  imports: [
+    CartItemComponent,
+    CurrencyPipe,
+    ConfirmationModalComponent,
+    AsyncPipe,
+  ],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.sass',
 })

@@ -1,6 +1,6 @@
 <app-confirmation-modal />
 <div class="cart-container">
-  <h1 class="title">Your Cart({{ cartService.cartQuantity }})</h1>
+  <h1 class="title">Your Cart({{ cartService.totalCartItems$ | async }})</h1>
 
   <!-- Conditionally render the cart -->
   <div class="content-container">
